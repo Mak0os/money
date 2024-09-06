@@ -4,14 +4,15 @@ as )
 # Student Name: Daniel Urdaneta
 # Assignment Number: Lab3
 # Due Date: 17/09/ 2024
+# Input: Sales goal for the month
 # This program calculates total sales for a department and determines a manager's bonus.
 # It uses a loop for entering weekly sales for each salesperson and calculates bonuses based on sales goals.
 
 # Input: Sales goal for the month
-sales_goal = float(input("Enter the sales goal for the month: $"))
+sales_goal = float(input("Enter the department sales goal for the month: $"))
 
 total_sales = 0  # Variable to store total sales for the department
-num_salespeople = 0  # Variable to store the number of salespeople
+num_salespeople = 0  # Variable to store the number of employees (salespeople)
 
 while True:
     # Increase the count of salespeople
@@ -19,6 +20,7 @@ while True:
 
     # Initialize a variable to store a salesperson's total sales for four weeks
     salesperson_total = 0
+
     # Loop to input sales for each week for the current salesperson
     for week in range(1, 5):
         weekly_sales = float(input(f"Salesperson {num_salespeople} week {week}: $"))
@@ -39,9 +41,9 @@ if total_sales > sales_goal:
 else:
     manager_bonus = 0.02 * total_sales  # 2% bonus if total sales are less than or equal to the sales goal
 
-# Output the results
+# Output the results with correct labels and ensure corresponding output
 print("\n--- Department Sales Summary ---")
-print(f"Number of salespeople: {num_salespeople}")
-print(f"Total sales for the department: ${total_sales}")
-print(f"Sales goal: ${sales_goal}")
-print(f"Manager's bonus: ${manager_bonus}")
+print(f"Number of employees: {num_salespeople}")  # Label and output for number of employees
+print(f"Total sales: ${total_sales:.2f}")  # Label and output for total sales
+print(f"Department sales goal: ${sales_goal:.2f}")  # Label and output for department sales goal
+print(f"Mgr. bonus: ${manager_bonus:.2f}")  # Label and output for manager's bonus
